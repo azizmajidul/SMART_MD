@@ -1,0 +1,70 @@
+package com.stmikbanisaleh.smart_md.Ui;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.stmikbanisaleh.smart_md.Adapter.Store_listAdapter;
+import com.stmikbanisaleh.smart_md.Model.Audit.Store_list;
+import com.stmikbanisaleh.smart_md.R;
+import com.stmikbanisaleh.smart_md.remote_access.API;
+import com.stmikbanisaleh.smart_md.Model.Audit.PagingRespon;
+import com.stmikbanisaleh.smart_md.remote_access.RetrofitClient;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class StoreList extends AppCompatActivity {
+
+
+
+    private RecyclerView recyclerView;
+    private List<Store_list> list = new ArrayList<>();
+    private Store_listAdapter store_listAdapter;
+    private API api;
+    private RecyclerView.LayoutManager layoutManager;
+    public static Store_list store_list;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_audit_store);
+        recyclerView = findViewById(R.id.recyclerview);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        store_listAdapter = new Store_listAdapter(list);
+        recyclerView.setAdapter(store_listAdapter);
+        api = RetrofitClient.getInstance().getApi();
+        LoadData();
+    }
+
+    private void LoadData(){
+        Call<PagingRespon> getList = api.getlist();
+        getList.enqueue(new Callback<PagingRespon>() {
+            @Override
+            public void onResponse(Call<PagingRespon> call, Response<PagingRespon> response) {
+                List<Store_list> lists = response.body().getData();
+                Log.d("data Get Ok", "row data :" + (lists.size()));
+                store_listAdapter = new Store_listAdapter(lists);
+                recyclerView.setAdapter(store_listAdapter);
+                store_listAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<PagingRespon> call, Throwable t) {
+                Toast.makeText(StoreList.this, "Gagal", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+    }
+}

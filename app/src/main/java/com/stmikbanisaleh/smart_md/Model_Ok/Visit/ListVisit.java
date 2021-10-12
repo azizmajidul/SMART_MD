@@ -1,0 +1,64 @@
+package com.stmikbanisaleh.smart_md.Model_Ok.Visit;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+public class ListVisit {
+    @SerializedName("schedule_id")
+    @Expose
+    private int schedule_id;
+
+    @SerializedName("id_toko")
+    @Expose
+    private int id_toko;
+
+    @SerializedName("store_id")
+    @Expose
+    private String store_id;
+
+    @SerializedName("store_name")
+    @Expose
+    private String store_name;
+
+    public ListVisit() {
+    }
+
+    public ListVisit(int schedule_id, int id_toko, String store_id, String store_name) {
+        this.schedule_id = schedule_id;
+        this.id_toko = id_toko;
+        this.store_id = store_id;
+        this.store_name = store_name;
+    }
+
+    public int getSchedule_id() {
+        return schedule_id;
+    }
+
+    public void setSchedule_id(int schedule_id) {
+        this.schedule_id = schedule_id;
+    }
+
+    public int getId_toko() {
+        return id_toko;
+    }
+
+    public void setId_toko(int id_toko) {
+        this.id_toko = id_toko;
+    }
+
+    public String getStore_id() {
+        return store_id;
+    }
+
+    public void setStore_id(String store_id) {
+        this.store_id = store_id;
+    }
+
+    public String getStore_name() {
+        return store_name;
+    }
+
+    public void setStore_name(String store_name) {
+        this.store_name = store_name;
+    }
+}
