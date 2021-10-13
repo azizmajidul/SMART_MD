@@ -36,11 +36,11 @@
                 android:layout_height="wrap_content"/>
 
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_alignParentRight="true"
-                android:src="@drawable/merchandiser"
+                android:src="@drawable/brand"
                 android:layout_width="82dp"
-                android:layout_height="82dp"></ImageView>
+                android:layout_height="82dp"></de.hdodenhof.circleimageview.CircleImageView>
 
         </RelativeLayout>
         <GridLayout

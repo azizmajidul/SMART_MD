@@ -30,7 +30,7 @@
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="#000000"
+        android:background="#cfd8dc"
         app:layout_constraintTop_toBottomOf="@+id/produk_name" />
 
 

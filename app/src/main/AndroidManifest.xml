@@ -11,9 +11,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/MyTheme">
         <activity android:name=".Ui.Report"></activity>
-        <activity android:name=".Ui.AuditStore" />
+        <activity android:name=".Ui.AuditStore"/>
         <activity android:name=".Ui.ProductList" />
         <activity android:name=".Ui.Store_visit" />
         <activity android:name=".Ui.StoreList" />

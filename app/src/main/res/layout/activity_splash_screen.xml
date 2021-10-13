@@ -14,13 +14,13 @@
 <!--    android:paddingTop=""-->
 <!--    tools:context="">-->
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/logo"
         android:layout_width="249dp"
         android:layout_height="304dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:src="@drawable/retail_merchandising" />
+        android:src="@drawable/brand" />
 
     <TextView
         android:layout_width="wrap_content"

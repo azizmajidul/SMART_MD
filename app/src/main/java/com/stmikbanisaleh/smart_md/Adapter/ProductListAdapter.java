@@ -1,6 +1,7 @@
 package com.stmikbanisaleh.smart_md.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.stmikbanisaleh.smart_md.Model_Ok.Store.ProductList_m;
 import com.stmikbanisaleh.smart_md.Model_Ok.Visit.ListVisit;
 import com.stmikbanisaleh.smart_md.R;
 import com.stmikbanisaleh.smart_md.Ui.ProductList;
+import com.stmikbanisaleh.smart_md.Ui.Report;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +40,18 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ProductListViewHolder holder, final int position) {
 
         final  ProductList_m productList_m = list.get(position);
         holder.product.setText(productList_m.getProduct_name());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), Report.class);
+                intent.putExtra("productName", list.get(position).getProduct_name());
+                v.getContext().startActivity(intent);
+            }
+        });
 
 
 

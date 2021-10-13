@@ -47,7 +47,6 @@ public class ProductList extends AppCompatActivity {
          txtStoreName = findViewById(R.id.txtStoreName);
          txtStoreName.setText(store_name);
 
-
          recyclerView = findViewById(R.id.recyclerview);
          LinearLayoutManager layoutManager = new LinearLayoutManager(this);
          layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
