@@ -51,9 +51,6 @@ public class Store_visit extends AppCompatActivity {
 
        
 
-
-
-
     }
 
     private void LoadData(){

@@ -27,7 +27,7 @@ public class ProductList extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<ProductList_m> list = new ArrayList<>();
     String store_id, store_name;
-    TextView txtStore_id,txtStoreName ;
+    TextView txtStore_id,txtStoreName;
     private API api;
     private ProductListAdapter productListAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -35,17 +35,19 @@ public class ProductList extends AppCompatActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
+//        parsing to report activity
          store_id = getIntent().getStringExtra("store_id");
          store_name = getIntent().getStringExtra("store_name");
          txtStore_id = findViewById(R.id.txtStore_id);
          txtStore_id.setText(store_id);
          txtStoreName = findViewById(R.id.txtStoreName);
          txtStoreName.setText(store_name);
+
+
 
          recyclerView = findViewById(R.id.recyclerview);
          LinearLayoutManager layoutManager = new LinearLayoutManager(this);

@@ -23,11 +23,14 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     private Context context;
     private List<ProductList_m> list = new ArrayList<>();
-    private View.OnClickListener listener;
+    TextView txtStore_id,txtStoreName;
 
+    private View.OnClickListener listener;
     public ProductListAdapter(List<ProductList_m> list){
         this.list = list;
     }
+
+
 
     @NonNull
     @Override
@@ -42,13 +45,16 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     @Override
     public void onBindViewHolder(@NonNull ProductListViewHolder holder, final int position) {
 
+
+
         final  ProductList_m productList_m = list.get(position);
+        holder.id_product.setText(productList_m.getProduct_id());
         holder.product.setText(productList_m.getProduct_name());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), Report.class);
-                intent.putExtra("productName", list.get(position).getProduct_name());
+                intent.putExtra("product_name", list.get(position).getProduct_name());
                 v.getContext().startActivity(intent);
             }
         });
@@ -63,11 +69,14 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     }
 
     public  static  class ProductListViewHolder extends RecyclerView.ViewHolder{
-        TextView product;
+        TextView product, id_product;
 
         public ProductListViewHolder(@NonNull View itemView) {
             super(itemView);
+            id_product = itemView.findViewById(R.id.txtid_product);
             product = itemView.findViewById(R.id.produk_name);
+
+
         }
     }
 }

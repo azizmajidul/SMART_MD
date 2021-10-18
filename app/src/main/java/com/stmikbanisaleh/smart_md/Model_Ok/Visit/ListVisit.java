@@ -10,7 +10,7 @@ public class ListVisit {
 
     @SerializedName("id_toko")
     @Expose
-    private int id_toko;
+    private String id_toko;
 
     @SerializedName("store_id")
     @Expose
@@ -23,7 +23,7 @@ public class ListVisit {
     public ListVisit() {
     }
 
-    public ListVisit(int schedule_id, int id_toko, String store_id, String store_name) {
+    public ListVisit(int schedule_id, String id_toko, String store_id, String store_name) {
         this.schedule_id = schedule_id;
         this.id_toko = id_toko;
         this.store_id = store_id;
@@ -38,11 +38,11 @@ public class ListVisit {
         this.schedule_id = schedule_id;
     }
 
-    public int getId_toko() {
+    public String getId_toko() {
         return id_toko;
     }
 
-    public void setId_toko(int id_toko) {
+    public void setId_toko(String id_toko) {
         this.id_toko = id_toko;
     }
 
