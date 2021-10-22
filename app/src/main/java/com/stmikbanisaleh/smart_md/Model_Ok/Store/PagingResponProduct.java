@@ -5,9 +5,13 @@ import com.google.gson.annotations.SerializedName;
 import com.stmikbanisaleh.smart_md.Model_Ok.Visit.ListVisit;
 import com.stmikbanisaleh.smart_md.Ui.ProductList;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PagingResponProduct {
+
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @SerializedName("Data")
     @Expose
@@ -63,5 +67,14 @@ public class PagingResponProduct {
 
     public void setTotalcount(int totalcount) {
         this.totalcount = totalcount;
+    }
+
+
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 }

@@ -23,7 +23,7 @@
                 android:id="@+id/textjudul"
                 android:textSize="28sp"
                 android:textColor="#FFFFFF"
-                android:text="Hai Majidul Aziz!!!"
+                android:text=" Majidul Aziz!!!"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView

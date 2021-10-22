@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -48,12 +49,14 @@ public class StoreList extends AppCompatActivity {
     }
 
     private void LoadData(){
+        final ProgressDialog loading = ProgressDialog.show(this,"Get Data","Please Wait..",false,false);
         Call<PagingRespon> getList = api.getlist();
         getList.enqueue(new Callback<PagingRespon>() {
             @Override
             public void onResponse(Call<PagingRespon> call, Response<PagingRespon> response) {
+                loading.dismiss();
                 List<Store_list> lists = response.body().getData();
-                Log.d("data Get Ok", "row data :" + (lists.size()));
+                Log.d("Get Data Success", "row data :" + (lists.size()));
                 store_listAdapter = new Store_listAdapter(lists);
                 recyclerView.setAdapter(store_listAdapter);
                 store_listAdapter.notifyDataSetChanged();
@@ -61,7 +64,8 @@ public class StoreList extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<PagingRespon> call, Throwable t) {
-                Toast.makeText(StoreList.this, "Gagal", Toast.LENGTH_SHORT).show();
+                Toast.makeText(StoreList.this, "Get Data Fail", Toast.LENGTH_SHORT).show();
+                loading.dismiss();
 
             }
         });

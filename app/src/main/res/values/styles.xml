@@ -8,9 +8,10 @@
     </style>
     <style name="MyTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/primary</item>
+
     </style>
     <style name="MyTitle" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/icons</item>
+        <item name="android:textColor">@color/icons</item>
     </style>
 
 </resources>

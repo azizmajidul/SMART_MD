@@ -12,19 +12,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
-        <activity android:name=".Ui.Report"></activity>
-        <activity android:name=".Ui.AuditStore"/>
+        <activity android:name=".Ui.ListViewProduct"></activity>
+        <activity android:name=".Ui.Report" />
+        <activity
+            android:label="@string/schedule"
+            android:name=".Ui.Masuk"
+            />
         <activity android:name=".Ui.ProductList" />
-        <activity android:name=".Ui.Store_visit" />
+        <activity
+            android:label="@string/Audit"
+            android:theme="@style/MyTheme"
+            android:name=".Ui.Store_visit"
+            />
         <activity android:name=".Ui.StoreList" />
-        <activity android:name=".login">
+        <activity android:name=".Login"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".profil" />
+        <activity
+            android:label="@string/profil"
+            android:name=".profil"
+           >
+
+        </activity>
         <activity
             android:name=".splash_screen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -34,7 +46,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Audit_store" />
+        <activity
+            android:label="@string/schedule"
+            android:name=".Audit_store"
+            />
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

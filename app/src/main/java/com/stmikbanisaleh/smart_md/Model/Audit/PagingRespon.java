@@ -20,7 +20,6 @@ public class PagingRespon {
 
     //Note Data sesuai dengan API
 
-
     public PagingRespon() {
     }
 

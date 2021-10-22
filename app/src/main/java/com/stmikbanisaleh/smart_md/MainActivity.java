@@ -6,12 +6,18 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
+import com.stmikbanisaleh.smart_md.Model_Ok.Login.PreferenceManager;
 import com.stmikbanisaleh.smart_md.Ui.StoreList;
 import com.stmikbanisaleh.smart_md.Ui.Store_visit;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private CardView audit_card, profil_card, schedule_card;
+
+
+    private TextView name;
+    private PreferenceManager preferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +36,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        dashborad_card.setOnClickListener(this);
         profil_card.setOnClickListener(this);
         schedule_card.setOnClickListener(this);
+
+
+        preferenceManager = new PreferenceManager(this);
+        name = findViewById(R.id.textjudul);
+        name.setText(preferenceManager.getEmail());
     }
+
+
+
+
 
     @Override
     public void onClick(View v) {
@@ -47,4 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
+
+
+
 }

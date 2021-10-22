@@ -3,6 +3,9 @@ package com.stmikbanisaleh.smart_md.Model_Ok.Store;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ProductList_m {
 
     @SerializedName("product_id")
@@ -13,6 +16,10 @@ public class ProductList_m {
     @Expose
     private String product_name;
 
+    @SerializedName("category_id")
+    @Expose
+    private String category_id;
+
     @SerializedName("category_name")
     @Expose
     private String category_name;
@@ -20,9 +27,12 @@ public class ProductList_m {
     public ProductList_m() {
     }
 
-    public ProductList_m(String product_id, String product_name, String category_name) {
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    public ProductList_m(String product_id, String product_name,String category_id, String category_name) {
         this.product_id = product_id;
         this.product_name = product_name;
+        this.category_id = category_id;
         this.category_name = category_name;
     }
 
@@ -43,12 +53,30 @@ public class ProductList_m {
         this.product_name = product_name;
     }
 
+
+    public String getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(String category_id) {
+        this.category_id = category_id;
+    }
+
     public String getCategory_name() {
         return category_name;
     }
 
     public void setCategory_name(String category_name) {
         this.category_name = category_name;
+    }
+
+
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 }
 

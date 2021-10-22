@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.stmikbanisaleh.smart_md.Model.Audit.Store_list;
 import com.stmikbanisaleh.smart_md.Model_Ok.Visit.ListVisit;
 import com.stmikbanisaleh.smart_md.R;
+import com.stmikbanisaleh.smart_md.Ui.ListViewProduct;
 import com.stmikbanisaleh.smart_md.Ui.ProductList;
 import com.stmikbanisaleh.smart_md.Ui.Report;
 
@@ -54,21 +55,14 @@ public class StoreVisitAdapter extends RecyclerView.Adapter<StoreVisitAdapter.St
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ProductList.class);
+                Intent intent = new Intent(v.getContext(), ListViewProduct.class);
                 intent.putExtra("store_id", list.get(position).getStore_id());
                 intent.putExtra("store_name", list.get(position).getStore_name());
+                intent.putExtra("id_toko", list.get(position).getId_toko());
                 v.getContext().startActivity(intent);
             }
         });
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent2 = new Intent(v.getContext(), Report.class);
-//                intent2.putExtra("store_id", list.get(position).getStore_id());
-//                intent2.putExtra("store_name", list.get(position).getStore_name());
-//                v.getContext().startActivity(intent2);
-//            }
-//        });
+//
 
     }
 

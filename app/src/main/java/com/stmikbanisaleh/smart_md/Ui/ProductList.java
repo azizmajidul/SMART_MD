@@ -10,8 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.stmikbanisaleh.smart_md.Adapter.ProductListAdapter;
+import com.stmikbanisaleh.smart_md.Adapter.StoreVisitAdapter;
 import com.stmikbanisaleh.smart_md.Model_Ok.Store.PagingResponProduct;
 import com.stmikbanisaleh.smart_md.Model_Ok.Store.ProductList_m;
+import com.stmikbanisaleh.smart_md.Model_Ok.Visit.ListVisit;
 import com.stmikbanisaleh.smart_md.R;
 import com.stmikbanisaleh.smart_md.remote_access.API;
 import com.stmikbanisaleh.smart_md.remote_access.RetrofitClient;
@@ -26,10 +28,12 @@ import retrofit2.Response;
 public class ProductList extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<ProductList_m> list = new ArrayList<>();
-    String store_id, store_name;
-    TextView txtStore_id,txtStoreName;
+    private List<ListVisit> listS = new ArrayList<>();
+    String store_id, store_name, kode_toko;
+    TextView txtStore_id,txtStoreName, toko;
     private API api;
     private ProductListAdapter productListAdapter;
+    private  StoreVisitAdapter storeVisitAdapter;
     private RecyclerView.LayoutManager layoutManager;
     public static ProductList productList;
 
@@ -46,7 +50,9 @@ public class ProductList extends AppCompatActivity {
          txtStore_id.setText(store_id);
          txtStoreName = findViewById(R.id.txtStoreName);
          txtStoreName.setText(store_name);
-
+//         toko = findViewById(R.id.id_toko);
+//        kode_toko = getIntent().getStringExtra("id_toko");
+//        toko.setText(store_id);
 
 
          recyclerView = findViewById(R.id.recyclerview);
@@ -54,6 +60,7 @@ public class ProductList extends AppCompatActivity {
          layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
          recyclerView.setLayoutManager(layoutManager);
          productListAdapter = new ProductListAdapter(list);
+        storeVisitAdapter = new StoreVisitAdapter(listS);
          recyclerView.setAdapter(productListAdapter);
          api = RetrofitClient.getInstance().getApi();
          LoadData();

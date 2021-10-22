@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -36,9 +37,12 @@ public class Store_visit extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_store_visit);
         recyclerView = findViewById(R.id.recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -54,10 +58,12 @@ public class Store_visit extends AppCompatActivity {
     }
 
     private void LoadData(){
+        final ProgressDialog loading = ProgressDialog.show(this,"Get Data","Please Wait..",false,false);
         Call<PagingResponStore_v> getList = api.getListStore_visit();
         getList.enqueue(new Callback<PagingResponStore_v>() {
             @Override
             public void onResponse(Call<PagingResponStore_v> call, Response<PagingResponStore_v> response) {
+                loading.dismiss();
                 List<ListVisit> lists = response.body().getData();
                 Log.d("Get Data Success", "row data :" + (lists.size()));
                 storeVisitAdapter = new StoreVisitAdapter(lists);
@@ -69,6 +75,7 @@ public class Store_visit extends AppCompatActivity {
             public void onFailure(Call<PagingResponStore_v> call, Throwable t) {
 
                 Toast.makeText(Store_visit.this, "Failed Get Data", Toast.LENGTH_SHORT).show();
+                loading.dismiss();
 
             }
         });
