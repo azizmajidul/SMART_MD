@@ -38,8 +38,8 @@ public class ListViewProduct extends AppCompatActivity  implements ListView.OnIt
     private List<ProductList_m> product;
 
 
-    String id_toko, store_id, store_name;
-    TextView txtId_toko, txtStore_id,txtStoreName;
+    String id_toko, store_id, store_name, id_user;
+    TextView txtId_toko, txtStore_id,txtStoreName, txtId_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,12 @@ public class ListViewProduct extends AppCompatActivity  implements ListView.OnIt
         store_id = getIntent().getStringExtra("store_id");
         store_name = getIntent().getStringExtra("store_name");
         id_toko = getIntent().getStringExtra("id_toko");
+        id_user = getIntent().getStringExtra("id");
+
+
+        txtId_user = findViewById(R.id.txtId_user);
+        txtId_user.setText(id_user);
+
 
         txtId_toko = findViewById(R.id.txtId_toko);
         txtId_toko.setText(id_toko);
@@ -116,6 +122,7 @@ public class ListViewProduct extends AppCompatActivity  implements ListView.OnIt
         intent.putExtra("id_toko", txtId_toko.getText().toString());
         intent.putExtra("store_id",txtStore_id.getText().toString());
         intent.putExtra("store_name", txtStoreName.getText().toString());
+        intent.putExtra("id", txtId_user.getText().toString());
         intent.putExtra("product_id", productList_m.getProduct_id());
         intent.putExtra("product_name", productList_m.getProduct_name());
         intent.putExtra("category_id", productList_m.getCategory_id());

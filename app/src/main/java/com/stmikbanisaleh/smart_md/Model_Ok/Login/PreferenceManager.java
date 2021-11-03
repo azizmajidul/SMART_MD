@@ -4,11 +4,15 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import java.lang.ref.SoftReference;
+import java.util.HashMap;
 
 public class PreferenceManager {
+
+    private SharedPreferences.Editor editor;
+
     private static final String TOKEN = "token";
     private static  final  String ID = "id";
-    private static final String USER_NAME = "name";
+    public static final String USER_NAME = "name";
     private static final String EMAIL = "email";
     private static final String PASSWORD = "password";
     private static final String AREA_COVERAGE = "area_coverage";
@@ -37,6 +41,8 @@ public class PreferenceManager {
     public PreferenceManager(Context context){
         this.context= context;
         preferences = context.getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE);
+        editor = preferences.edit();
+
     }
 
 
@@ -46,9 +52,11 @@ public class PreferenceManager {
 //
 //    }
 
+
+
     public  String getToken() {
         token = preferences.getString(TOKEN,"");
-        return TOKEN;
+        return token;
     }
 
     public void setToken(String token){
@@ -67,7 +75,7 @@ public class PreferenceManager {
 
     public String getUserName(){
         name = preferences.getString(USER_NAME,"");
-        return  name;
+        return name;
     }
 
     public  void setUserName(String userName){
@@ -78,7 +86,7 @@ public class PreferenceManager {
 
     public String getAddress(){
         address = preferences.getString(ADDRESS,"");
-        return  address;
+        return  ADDRESS;
     }
 
     public  void setAddress(String address){
@@ -121,7 +129,7 @@ public class PreferenceManager {
 
     public String getAreaCoverage(){
         area_coverage = preferences.getString(AREA_COVERAGE,"");
-        return  area_coverage;
+        return  AREA_COVERAGE;
     }
     public  void setArea_coverage(String area_coverage){
         this.area_coverage = area_coverage;
@@ -169,6 +177,12 @@ public class PreferenceManager {
     public void setRememberMe(boolean remember_me){
         remember_me = remember_me;
         preferences.edit().putBoolean(REMEMBER_ME, remember_me).apply();
+    }
+    public HashMap<String, String>getUserDetail() {
+        HashMap<String, String> user = new HashMap<>();
+        user.put(USER_NAME, preferences.getString(USER_NAME, null));
+
+        return user;
     }
 
 }

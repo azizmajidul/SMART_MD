@@ -7,6 +7,9 @@ public class ListVisit {
     @SerializedName("schedule_id")
     @Expose
     private int schedule_id;
+    @SerializedName("id")
+    @Expose
+    private String id;
 
     @SerializedName("id_toko")
     @Expose
@@ -23,11 +26,12 @@ public class ListVisit {
     public ListVisit() {
     }
 
-    public ListVisit(int schedule_id, String id_toko, String store_id, String store_name) {
+    public ListVisit(int schedule_id, String id_toko, String store_id, String store_name, String id) {
         this.schedule_id = schedule_id;
         this.id_toko = id_toko;
         this.store_id = store_id;
         this.store_name = store_name;
+        this.id = id;
     }
 
     public int getSchedule_id() {
@@ -60,5 +64,14 @@ public class ListVisit {
 
     public void setStore_name(String store_name) {
         this.store_name = store_name;
+    }
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

@@ -52,6 +52,7 @@ public class StoreVisitAdapter extends RecyclerView.Adapter<StoreVisitAdapter.St
         holder.texIDToko.setText(listVisit.getId_toko());
         holder.store_id.setText(listVisit.getStore_id());
         holder.store_name.setText(listVisit.getStore_name());
+        holder.id.setText(listVisit.getId());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +60,7 @@ public class StoreVisitAdapter extends RecyclerView.Adapter<StoreVisitAdapter.St
                 intent.putExtra("store_id", list.get(position).getStore_id());
                 intent.putExtra("store_name", list.get(position).getStore_name());
                 intent.putExtra("id_toko", list.get(position).getId_toko());
+                intent.putExtra("id", list.get(position).getId());
                 v.getContext().startActivity(intent);
             }
         });
@@ -72,13 +74,14 @@ public class StoreVisitAdapter extends RecyclerView.Adapter<StoreVisitAdapter.St
     }
 
     public static class StoreVisitViewHolder extends RecyclerView.ViewHolder{
-        TextView store_id, store_name, texIDToko;
+        TextView store_id, store_name, texIDToko, id;
 
         public StoreVisitViewHolder(@NonNull View itemView) {
             super(itemView);
             store_id = itemView.findViewById(R.id.store_id);
             store_name = itemView.findViewById(R.id.store_name);
             texIDToko = itemView.findViewById(R.id.texIDToko);
+            id = itemView.findViewById(R.id.id);
         }
     }
 }

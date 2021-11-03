@@ -3,5 +3,6 @@
     <string name="profil">Profil </string>
     <string name="schedule"> Schedule For Tomorrow</string>
     <string name="Audit">SMART MD - Audit Store</string>
+    <string name="History">SMART MD - History</string>
 
 </resources>

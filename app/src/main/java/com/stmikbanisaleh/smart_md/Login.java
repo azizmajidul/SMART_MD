@@ -17,6 +17,7 @@ import com.stmikbanisaleh.smart_md.Model_Ok.Login.LoginReaquest;
 import com.stmikbanisaleh.smart_md.Model_Ok.Login.PreferenceManager;
 import com.stmikbanisaleh.smart_md.Model_Ok.Login.ResponLogin;
 import com.stmikbanisaleh.smart_md.Model_Ok.Login2.Entity.User;
+import com.stmikbanisaleh.smart_md.Model_Ok.Login2.Entity.UserRespon;
 import com.stmikbanisaleh.smart_md.remote_access.API;
 import com.stmikbanisaleh.smart_md.remote_access.RetrofitClient;
 
@@ -36,6 +37,7 @@ public class Login extends AppCompatActivity {
     private PreferenceManager preferenceManager;
     private RetrofitClient  retrofitClient;
     private LoginReaquest loginReaquest;
+    UserRespon userRespon;
     private User usre;
 //    private ResponLogin responLogin;
     private boolean statusPassword = true;
@@ -119,6 +121,8 @@ public class Login extends AppCompatActivity {
         preferenceManager.setToken(responLogin.getToken());
         preferenceManager.setLogin(true);
 
+
+
     }
 
     public void login_action(){
@@ -176,6 +180,7 @@ public class Login extends AppCompatActivity {
         preferenceManager.setToken(token);
         Intent intent = new Intent(Login.this, MainActivity.class);
         startActivity(intent);
+        finish();
 
     }
 

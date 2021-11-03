@@ -3,9 +3,9 @@ package com.stmikbanisaleh.smart_md.Model_Ok.Login2.Entity;
 public class UserRespon {
 
 
-    private User data;
+    private User Data;
 
     public User getData(){
-        return  data;
+        return  Data;
     }
 }

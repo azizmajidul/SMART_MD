@@ -30,7 +30,7 @@
                 android:layout_marginTop="6dp"
                 android:layout_below="@id/textjudul"
                 android:textSize="18sp"
-                android:textColor="#52BAFF"
+                android:textColor="#FFFFFF"
                 android:text="Welcome To SMART MD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -89,7 +89,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/profil_card"
+                android:id="@+id/dashborad_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -106,11 +106,11 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/id"
+                        android:src="@drawable/note"
                         android:layout_width="50dp"
                         android:layout_height="50dp"/>
                     <TextView
-                        android:text="Profil"
+                        android:text="History"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp"
                         android:layout_marginTop="12dp"

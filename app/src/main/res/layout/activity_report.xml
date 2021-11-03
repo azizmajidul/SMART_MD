@@ -65,13 +65,34 @@
                 android:textSize="18sp"
                 android:textColor="#000000"
                 android:layout_marginStart="15dp"
+                android:text="ID USER"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/user_id"
+                android:visibility="gone"
+                android:layout_marginStart="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:ems="6"
+                android:inputType="textPersonName" />
+            <TextView
+
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/textjudul"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginStart="15dp"
                 android:text="ID TOKO"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:id="@+id/txttoko_id"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_marginStart="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,12 +107,12 @@
                 android:textColor="#000000"
                 android:layout_marginStart="15dp"
                 android:text="ID Produk"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:id="@+id/id_product"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_marginStart="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -106,12 +127,12 @@
                 android:textColor="#000000"
                 android:layout_marginStart="15dp"
                 android:text="ID Category"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:id="@+id/id_category"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_marginStart="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -158,24 +179,16 @@
                 android:text="What's Product Fifo? "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioGroup
-
+            <EditText
+                android:id="@+id/product_fifo"
                 android:layout_marginStart="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <RadioButton android:id="@+id/yes_fifo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="yes"
-                    />
-                <RadioButton android:id="@+id/no_fifo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="No"
-                    />
-
-            </RadioGroup>
+                android:hint="Yes Or No"
+                android:ems="6"
+                android:textColorHighlight="#7cff88"
+                android:inputType="textPersonName"
+              />
             <TextView
                 android:layout_marginStart="15dp"
                 android:textSize="18sp"
@@ -212,23 +225,16 @@
                 android:text="Is there Price Card?"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioGroup
+            <EditText
+                android:id="@+id/price"
                 android:layout_marginStart="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <RadioButton android:id="@+id/yes_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="yes"
-                    />
-                <RadioButton android:id="@+id/no_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="No"
-                   />
-
-            </RadioGroup>
+                android:hint="Yes Or No"
+                android:ems="6"
+                android:textColorHighlight="#7cff88"
+                android:inputType="textPersonName"
+                />
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
@@ -237,23 +243,16 @@
                 android:text="Is the Planogram correct?"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioGroup
+            <EditText
+                android:id="@+id/plano"
                 android:layout_marginStart="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <RadioButton android:id="@+id/yes_planogram"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="yes"
-                    />
-                <RadioButton android:id="@+id/no_planogram"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="No"
-                    />
-
-            </RadioGroup>
+                android:hint="Yes or No"
+                android:ems="6"
+                android:textColorHighlight="#7cff88"
+                android:inputType="textPersonName"
+                />
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
@@ -262,24 +261,38 @@
                 android:text="Is promotion correct?"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <RadioGroup
+            <EditText
+                android:id="@+id/promotion"
                 android:layout_marginStart="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <RadioButton android:id="@+id/p_correct"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="yes"
-                    />
-                <RadioButton android:id="@+id/p_dont_c"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="No"
-                    />
-
-            </RadioGroup>
+                android:hint="Yes Or No"
+                android:ems="6"
+                android:textColorHighlight="#7cff88"
+                android:inputType="textPersonName"
+                />
         </GridLayout>
+<!--        <ImageView-->
+<!--            android:id="@+id/image_view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:scaleType="centerInside"-->
+<!--            >-->
+
+<!--        </ImageView>-->
+<!--        <Button-->
+<!--            android:id="@+id/buttonImage"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/bag_button"-->
+<!--            android:layout_marginStart="30dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Select Image"-->
+<!--            android:textColor="@color/icons"-->
+<!--            >-->
+
+<!--        </Button>-->
         <GridLayout
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
@@ -291,6 +304,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                android:id="@+id/buttonSave"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="50dp"
                 android:layout_width="150dp"

@@ -24,7 +24,8 @@
             android:theme="@style/MyTheme"
             android:name=".Ui.Store_visit"
             />
-        <activity android:name=".Ui.StoreList" />
+        <activity android:name=".Ui.StoreList"
+            android:label="@string/schedule"/>
         <activity android:name=".Login"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -49,10 +50,17 @@
         <activity
             android:label="@string/schedule"
             android:name=".Audit_store"
+
             />
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Ui.History.History"
+        android:label="@string/History"
+        />
+        <activity android:name=".Ui.History.Coba"
+            />
     </application>
+
 
 </manifest>
