@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -127,10 +129,11 @@ public class Report extends AppCompatActivity {
 //        image_view = (ImageView) findViewById(R.id.image_view);
 //        retrofitClient =RetrofitClient.getInstance();
 
-//        String actionBarTitile;
-//        actionBarTitile = " Report";
-//        getSupportActionBar().setTitle(actionBarTitile);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+      getSupportActionBar().setTitle(Html.fromHtml("<font color=\"#fffffff\">" + getString(R.string.audit_label) + "</font>"));
+
+
+
 
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,11 +147,11 @@ public class Report extends AppCompatActivity {
     }
 
     private void actionAdd(){
-
-        progress = new ProgressDialog(this);
-        progress.setCancelable(false);
-        progress.setMessage("Loading....");
-        progress.show();
+//
+//        progress = new ProgressDialog(this);
+//        progress.setCancelable(false);
+//        progress.setMessage("Loading....");
+//        progress.show();
 
         //get data dari editText
         String UserId = User.getText().toString().trim();
@@ -163,6 +166,44 @@ public class Report extends AppCompatActivity {
         String price = harga.getText().toString().trim();
         String plano = listing.getText().toString().trim();
         String promo = is_promo.getText().toString().trim();
+
+//        validasi
+        if(Quantity.isEmpty()){
+            Stock.setError("Please Enter Stock");
+            Stock.requestFocus();
+            return;
+        }
+        if(Facing.isEmpty()){
+            FacingProduk.setError("Please Enter Facing");
+            FacingProduk.requestFocus();
+            return;
+        }
+        if(NormalPrice.isEmpty()){
+            Normal_Price.setError("Please Enter Normal Price");
+            Normal_Price.requestFocus();
+            return;
+        }
+        if(PromoPrice.isEmpty()){
+            Promo_Price.setError("Please Enter Promo Price");
+            Promo_Price.requestFocus();
+            return;
+        }
+        if(fifo.isEmpty()){
+            fifo_product.setError("Please Enter Fifo");
+            fifo_product.requestFocus();
+            return;
+        }
+        if(plano.isEmpty()){
+            listing.setError("Please Enter Plano");
+            listing.requestFocus();
+            return;
+        }
+        if(promo.isEmpty()){
+            is_promo.setError("Please Enter Promotion");
+            is_promo.requestFocus();
+            return;
+        }
+
 
 ////        Radio Fifo
 //        int selectIdfifo = radioGroup1.getCheckedRadioButtonId();

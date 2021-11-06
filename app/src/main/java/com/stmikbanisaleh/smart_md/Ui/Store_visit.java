@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.stmikbanisaleh.smart_md.Adapter.StoreVisitAdapter;
 import com.stmikbanisaleh.smart_md.Model.Audit.PagingRespon;
 import com.stmikbanisaleh.smart_md.Model.Audit.Store_list;
+import com.stmikbanisaleh.smart_md.Model_Ok.Login.PreferenceManager;
 import com.stmikbanisaleh.smart_md.Model_Ok.Visit.ListVisit;
 import com.stmikbanisaleh.smart_md.Model_Ok.Visit.PagingResponStore_v;
 import com.stmikbanisaleh.smart_md.R;
@@ -34,6 +36,7 @@ public class Store_visit extends AppCompatActivity {
     private API api;
     private RecyclerView.LayoutManager layoutManager;
     public static ListVisit listVisit;
+    private PreferenceManager preferenceManager;
 
 
 
@@ -44,6 +47,8 @@ public class Store_visit extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_store_visit);
+
+        getSupportActionBar().setTitle(Html.fromHtml("<font color=\"#fffffff\">" + getString(R.string.store_label) + "</font>"));
         recyclerView = findViewById(R.id.recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -51,6 +56,7 @@ public class Store_visit extends AppCompatActivity {
         storeVisitAdapter = new StoreVisitAdapter(list);
         recyclerView.setAdapter(storeVisitAdapter);
         api = RetrofitClient.getInstance().getApi();
+        preferenceManager = new PreferenceManager(this);
         LoadData();
 
        
@@ -59,7 +65,7 @@ public class Store_visit extends AppCompatActivity {
 
     private void LoadData(){
         final ProgressDialog loading = ProgressDialog.show(this,"Get Data","Please Wait..",false,false);
-        Call<PagingResponStore_v> getList = api.getListStore_visit();
+        Call<PagingResponStore_v> getList = api.getListStore_visit("" + preferenceManager.getEmail());
         getList.enqueue(new Callback<PagingResponStore_v>() {
             @Override
             public void onResponse(Call<PagingResponStore_v> call, Response<PagingResponStore_v> response) {

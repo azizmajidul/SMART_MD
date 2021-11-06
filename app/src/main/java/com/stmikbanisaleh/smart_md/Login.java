@@ -165,7 +165,7 @@ public class Login extends AppCompatActivity {
                     t.printStackTrace();
                     pb_login.setVisibility(View.GONE);
 
-                    Toast.makeText(Login.this, "eroooooooor", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Please check your connection or internet access", Toast.LENGTH_SHORT).show();
 
                 }
             });

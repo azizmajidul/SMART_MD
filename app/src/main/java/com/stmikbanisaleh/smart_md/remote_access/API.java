@@ -3,6 +3,7 @@ package com.stmikbanisaleh.smart_md.remote_access;
 import com.stmikbanisaleh.smart_md.Model.Audit.PagingRespon;
 import com.stmikbanisaleh.smart_md.Model_Ok.History.ResponHistory;
 import com.stmikbanisaleh.smart_md.Model_Ok.Login.LoginReaquest;
+import com.stmikbanisaleh.smart_md.Model_Ok.Login.PreferenceManager;
 import com.stmikbanisaleh.smart_md.Model_Ok.Login.ResponLogin;
 import com.stmikbanisaleh.smart_md.Model_Ok.Login2.Entity.AuthorizationRespon;
 import com.stmikbanisaleh.smart_md.Model_Ok.Login2.Entity.UserRespon;
@@ -25,6 +26,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface API {
 
@@ -33,7 +35,8 @@ public interface API {
     Call<PagingRespon> getlist();
 
     @GET("API/store_visit")
-    Call<PagingResponStore_v> getListStore_visit();
+    Call<PagingResponStore_v> getListStore_visit(@Query( PreferenceManager.EMAIL) String email);
+
 
     @GET("API/GetProductList")
     Call<PagingResponProduct>getProductList();

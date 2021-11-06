@@ -29,17 +29,17 @@ public class splash_screen extends AppCompatActivity {
             @Override
             public void run() {
                 /*mulai activity ke MainActivity setelah 5 detik*/
-//                if(preferenceManager.isLogin()){
-//                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//                    finish();
-//
-//                }else {
-//                    startActivity(new Intent(getApplicationContext(), Login.class));
-//                finish();
-//                }
+                if(preferenceManager.isLogin()){
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
 
-                startActivity(new Intent(getApplicationContext(), Login.class));
+                }else {
+                    startActivity(new Intent(getApplicationContext(), Login.class));
                 finish();
+                }
+
+//                startActivity(new Intent(getApplicationContext(), Login.class));
+//                finish();
             }
             /*durasi 5000ms*/
         },2000);

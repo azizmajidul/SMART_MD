@@ -13,7 +13,7 @@ public class PreferenceManager {
     private static final String TOKEN = "token";
     private static  final  String ID = "id";
     public static final String USER_NAME = "name";
-    private static final String EMAIL = "email";
+    public static final String EMAIL = "email";
     private static final String PASSWORD = "password";
     private static final String AREA_COVERAGE = "area_coverage";
     private static final String ADDRESS = "address";
@@ -43,6 +43,10 @@ public class PreferenceManager {
         preferences = context.getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE);
         editor = preferences.edit();
 
+    }
+    public void logoutUser(){
+    editor.clear();
+    editor.commit();
     }
 
 
@@ -181,6 +185,7 @@ public class PreferenceManager {
     public HashMap<String, String>getUserDetail() {
         HashMap<String, String> user = new HashMap<>();
         user.put(USER_NAME, preferences.getString(USER_NAME, null));
+        user.put(EMAIL, preferences.getString(EMAIL, null));
 
         return user;
     }

@@ -1,8 +1,12 @@
 <resources>
-    <string name="app_name">SMART MD</string>
+    <string name="app_name">SMART MD
+
+    </string>
     <string name="profil">Profil </string>
-    <string name="schedule"> Schedule For Tomorrow</string>
-    <string name="Audit">SMART MD - Audit Store</string>
-    <string name="History">SMART MD - History</string>
+    <string name="schedule_label"> Schedule For Tomorrow</string>
+    <string name="audit_label">Smart MD --- Audit Store</string>
+    <string name="history_label">Smart MD --- History</string>
+    <string name="product_label">Smart MD -- Product List</string>
+    <string name="store_label">Smart MD -- Store List</string>
 
 </resources>

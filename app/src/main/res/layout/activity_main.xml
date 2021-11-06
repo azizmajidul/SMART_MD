@@ -155,7 +155,7 @@
             </androidx.cardview.widget.CardView>
         </GridLayout>
         <GridLayout
-            android:rowCount="1"
+            android:rowCount="2"
             android:columnCount="1"
             android:alignmentMode="alignMargins"
             android:columnOrderPreserved="false"
@@ -174,13 +174,12 @@
                 android:layout_margin="12dp">
 
                 <LinearLayout
+                    android:id = "@+id/linear1"
                     android:orientation="vertical"
-
                     android:gravity="center"
                     android:padding="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="77dp"
@@ -200,19 +199,17 @@
                         android:layout_marginTop="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
-
                 </LinearLayout>
-
-
             </androidx.cardview.widget.CardView>
-
         </GridLayout>
-
-
-
-
+        <Button
+            android:id="@+id/buttonLogout"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="logout"
+            android:background="@drawable/bag_button"
+            android:layout_marginStart="40dp"
+            android:textColor="#ffffff">
+        </Button>
     </LinearLayout>
-
-
-
 </ScrollView>

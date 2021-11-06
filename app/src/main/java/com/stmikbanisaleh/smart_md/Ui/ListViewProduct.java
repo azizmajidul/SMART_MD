@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -46,7 +47,7 @@ public class ListViewProduct extends AppCompatActivity  implements ListView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_product);
 
-
+        getSupportActionBar().setTitle(Html.fromHtml("<font color=\"#fffffff\">" + getString(R.string.product_label) + "</font>"));
         store_id = getIntent().getStringExtra("store_id");
         store_name = getIntent().getStringExtra("store_name");
         id_toko = getIntent().getStringExtra("id_toko");
